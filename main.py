@@ -1,5 +1,8 @@
-from lewis_func import *
-from func2 import *
+"""Main py"""
+from inputs import create_var, create_par, variables
 
-world_builder()
-genetic_finder()
+create_var()
+create_par()
+
+for i in variables:
+    print(i.stampa())
