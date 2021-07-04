@@ -13,7 +13,7 @@ def create_var():
 
 def build_par(i):
     """Build parents of caused Var"""
-    par_num = int(input('How many parents have '+str(i.name)+'?'))
+    par_num = int(input('How many parents have '+str(i.name)+'? '))
     for _ in range(par_num):
         i.par.append(Var(input('Parent of '+str(i.name)+' is: ')))
 
