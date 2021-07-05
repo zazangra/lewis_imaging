@@ -26,6 +26,7 @@ class Var():
         string_cond= string_cond.replace("]","")
         string_cond= string_cond.replace("'","")
         string_cond= string_cond.replace(" ","")
+        string_cond= "("+string_cond+")"
         return str(string_cond)
 
     def build_prob(self):
@@ -43,6 +44,7 @@ class Var():
                 good_i = list(i)
                 for j,k in zip(good_i, par_names):
                     string_one += k + "=" + str(j)+" "
+                string_one= "'"+string_one+"'"
                 string_two = string_one.replace("Tprob ", "")
                 string_input="Which is probability of "+self.build_cond_string()+" if "
                 self.prob[string_one] = float(input(string_input+string_two+" ?"))
