@@ -7,12 +7,13 @@ class Var():
     def __init__(self, name):
 
         self.name = str(name)
-        self.value = bool
+        self.value = int
         self.par = []
         self.prob = {}
 
     def build_parname(self):
         """For some reason, we need this to add an array of par names"""
+
         par_names=[]
         for i in self.par:
             par_names.append(i.name)
@@ -20,6 +21,7 @@ class Var():
 
     def build_cond_string(self):
         """catch the right string for getting cond prob"""
+
         par_names = self.build_parname()
         string_cond = str(par_names)+"|"+self.name
         string_cond= string_cond.replace("[","")
@@ -53,4 +55,5 @@ class Var():
 
     def stampa(self):
         """Debug"""
+
         return "Object: "+self.name+" "+str(self.value)+" "+str(self.build_parname())
