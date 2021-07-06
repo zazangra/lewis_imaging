@@ -12,3 +12,9 @@ def world_creator():
         world = World()
         world.build_world(i)
         universe.append(world)
+
+#def prob_get():
+#    """Get probabilities of each member of universe"""
+#    for i in universe:
+#        for j in i.members:
+#            for n in j.getprob:

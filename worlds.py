@@ -13,7 +13,7 @@ class World():
     """Every world will be an object: two dics e 1 prob"""
     def __init__(self):
 
-        self.members = var_names
+        self.members = variables
         self.world = {}
         self.p_world = {}
         self.prob = float
@@ -21,7 +21,7 @@ class World():
     def build_world(self, i):
         """Populate a single world with value (see create_worlds)"""
 
-        self.world={self.members[n]: i[n] for n in range(len(self.members))}
+        self.world={var_names[n]: i[n] for n in range(len(self.members))}
 
     def buil_world_prob(self):
         """Multiply all values in p_world"""
@@ -30,3 +30,6 @@ class World():
             prob = prob*self.p_world[i]
         self.prob = prob
         return self.prob
+
+    def build_p_world(self, universe):
+        """Get dic of world'p from universe set"""
