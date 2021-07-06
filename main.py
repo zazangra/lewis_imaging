@@ -1,6 +1,5 @@
 """Main py"""
 
-import pdb 
 from inputs import create_var, create_par, variables
 from create_worlds import universe, world_creator
 from worlds import build_var_names

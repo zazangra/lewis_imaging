@@ -1,6 +1,5 @@
 """Creating a class for worlds' variables"""
 from itertools import product as prod
-import numpy as np
 
 class Var():
     """ par is an array of Var' parents (Var themselves); probability is a dic"""
@@ -71,11 +70,11 @@ class Var():
             gprob_key = self.name+'1'+getprob_key
             print('me la luppo e k='+getprob_key)
             self.getprob[gprob_key] = true_dic[o]
-        
+        conf2 = prod([0,1], repeat=len(self.par))
         false_dic = {k:v for (k,v) in self.prob.items() if "Fprob" in k}
         print(false_dic)
-        breakpoint()
-        for n,m in zip(conf, false_dic):
+        #breakpoint()
+        for n,m in zip(conf2, false_dic):
             print('Im in the loop')
             good_n = list(n)
             getprob_key = ""
