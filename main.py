@@ -10,16 +10,11 @@ create_par()
 
 for i in variables:
     i.build_prob()
-   # print(i.stampa())
     print(i.prob)
-    if len(i.par)>=2:
-        i.build_getprob()
-        print(i.getprob)
+    print(i.getprob)
+
 
 build_var_names()
 world_creator()
 for i in universe:
     print(i.world)
-    print(i.members)
-    for j in i.members:
-        print(j.name)
