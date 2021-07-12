@@ -17,4 +17,6 @@ def world_creator():
 #    """Get probabilities of each member of universe"""
 #    for i in universe:
 #        for j in i.members:
-#            for n in j.getprob:
+#            value = i.world[j.name]
+#            print(str(j.name)+' '+str(value))
+#            for n in j.getprob
