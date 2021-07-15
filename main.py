@@ -1,8 +1,8 @@
 """Main py"""
 
-from inputs import create_var, create_par, variables
-from create_worlds import universe, world_creator, prob_get
-from worlds import build_var_names
+from world.var.inputs import create_var, create_par, variables
+from world.create_worlds import universe, world_creator, prob_get
+from world.worlds_class import build_var_names
 
 create_var()
 create_par()

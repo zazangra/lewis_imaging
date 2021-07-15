@@ -1,6 +1,6 @@
 """Let's create our worlds!"""
 
-from inputs import variables
+from world.var.inputs import variables
 
 var_names=[]
 

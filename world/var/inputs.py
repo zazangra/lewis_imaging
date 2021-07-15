@@ -1,5 +1,5 @@
 """Defining input for building vars"""
-from variables import Var
+from world.var.var_class import Var
 
 variables = []
 

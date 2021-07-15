@@ -1,6 +1,6 @@
 """Let us build all the worlds"""
-from worlds import World, var_names
-from variables import prod
+from world.worlds_class import World, var_names
+from world.var.var_class import prod
 
 universe=[]
 
