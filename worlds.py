@@ -26,7 +26,7 @@ class World():
     def build_world_prob(self):
         """Multiply all values in p_world"""
         prob = 1
-        for i in self.p_world:
-            prob = prob*self.p_world[i]
-        self.prob = prob
+        for k in self.p_world.values():
+            prob = prob*k
+        self.prob = round(prob, 5)
         return self.prob
