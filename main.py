@@ -1,7 +1,7 @@
 """Main py"""
 
 from inputs import create_var, create_par, variables
-from create_worlds import universe, world_creator, prob_get
+from create_worlds import universe, world_creator
 from worlds import build_var_names
 
 create_var()
@@ -16,7 +16,6 @@ for i in variables:
 
 build_var_names()
 world_creator()
-prob_get()
 for i in universe:
     print(i.world)
 
