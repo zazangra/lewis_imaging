@@ -13,10 +13,18 @@ def world_creator():
         world.build_world(i)
         universe.append(world)
 
-#def prob_get():
-#    """Get probabilities of each member of universe"""
-#    for i in universe:
-#        for j in i.members:
-#            value = i.world[j.name]
-#            print(str(j.name)+' '+str(value))
-#            for n in j.getprob
+def prob_get():
+    """Get probabilities of each member of universe"""
+    for i in universe:
+        for j in i.members:
+            value = j.name
+#            print('eccomi')
+#            print(value)
+            for n in j.getprob:
+#                print(n)
+                res = list(n)
+                res_one = {res[m]: res[m+1] for m in range(0, len(res),2)}
+#                print('qua')
+#                print(res_one)
+                if all(s in i.world.items() for s in res_one.items()):
+                    i.p_world[value] = j.getprob[n]

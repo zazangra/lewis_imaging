@@ -30,6 +30,3 @@ class World():
             prob = prob*self.p_world[i]
         self.prob = prob
         return self.prob
-
-    def build_p_world(self, universe):
-        """Get dic of world'p from universe set"""
