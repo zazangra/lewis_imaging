@@ -18,4 +18,3 @@ build_var_names()
 world_creator()
 for i in universe:
     print(i.world)
-

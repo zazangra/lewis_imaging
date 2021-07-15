@@ -49,10 +49,13 @@ class Var():
                 sg_p.append(num)
             else:
                 sg_p.append(num)
-        self.getprob[t_key] = {sg_p[m]: sg_p[m+1] for m in range(0, len(sg_p), 2)}
+        sg_pr = (* sg_p,)
+        print(sg_pr)
+        self.getprob[sg_pr] = t_key
         sg_p.pop()
         sg_p.append(0)
-        self.getprob[f_key] = {sg_p[m]: sg_p[m+1] for m in range(0, len(sg_p), 2)}
+        sg_prf = (* sg_p,)
+        self.getprob[sg_prf] = f_key
 
     def build_prob(self):
         """Build probability dictionary and call for getprob dic"""
