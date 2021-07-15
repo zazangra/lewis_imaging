@@ -23,7 +23,7 @@ class World():
 
         self.world={var_names[n]: i[n] for n in range(len(self.members))}
 
-    def buil_world_prob(self):
+    def build_world_prob(self):
         """Multiply all values in p_world"""
         prob = 1
         for i in self.p_world:

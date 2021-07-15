@@ -19,5 +19,6 @@ world_creator()
 prob_get()
 for i in universe:
     print(i.world)
+    i.build_world_prob()
     print(i.p_world)
     print(i.prob)
