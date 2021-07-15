@@ -64,8 +64,8 @@ class Var():
             prob_num= round(float(input('Which is the probability of '+self.name+'? ')),5)
             self.prob["Tprob"]= prob_num
             self.prob["Fprob"]= 1-prob_num
-            self.getprob[self.name+'1'] = prob_num
-            self.getprob[self.name+'0'] = 1-prob_num
+            self.getprob[(self.name, 1)] = prob_num
+            self.getprob[(self.name, 0)] = 1-prob_num
         else:
             par_names = self.build_parname()
             conf = prod([0,1], repeat=len(self.par))
