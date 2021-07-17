@@ -44,5 +44,5 @@ def similarity_functions():
     for i in n_ant_worlds:
         build_sim(i)
     for j in ant_worlds:
-        j.most.similar.append(j.world)
+        j.most_similar.append(j.world)
 
