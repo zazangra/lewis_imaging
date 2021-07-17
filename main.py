@@ -31,3 +31,6 @@ for i in ant_worlds:
 print('this is nantworlds')
 for i in n_ant_worlds:
     print(i.world)
+    
+for i in universe:
+    print(i.most_similar)
