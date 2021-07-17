@@ -1,6 +1,7 @@
 """We will select worlds in which a given formula happens"""
 from world.create_worlds import universe
 from world.var.var_class import re
+import ast
 
 #maybe import from main is safer?
 
@@ -32,4 +33,16 @@ def input_to_formula():
         print(replacement)
         string_formula = string_formula.replace(k, replacement)
     return string_formula
+
+def build_sim(i):
+    """Build most similar worlds of n_ant_worlds"""
+    sim_num = int(input('How many most similar worls have '+str(i.world)+'? '))
+    for _ in range(sim_num):
+        i.most_similar.append(ast.literal_eval(input('Most similar world to '+str(i.world)+' is: ')))
+
+def similarity_functions():
+    for i in n_ant_worlds:
+        build_sim(i)
+    for j in ant_worlds:
+        j.most.similar.append(j.world)
 
