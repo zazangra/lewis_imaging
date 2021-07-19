@@ -23,3 +23,5 @@ def prob_get():
                 res_one = {res[m]: res[m+1] for m in range(0, len(res),2)}
                 if all(s in i.world.items() for s in res_one.items()):
                     i.p_world[value] = j.getprob[k]
+
+

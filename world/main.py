@@ -3,7 +3,7 @@
 from world.var.inputs import create_var, create_par, variables
 from world.create_worlds import universe, world_creator, prob_get
 from world.worlds_class import build_var_names
-from imaging.imaging_funcs import final_prob, final_valuations, imaging, valuations, ant_worlds, n_ant_worlds, similarity_functions, con_probs
+from imaging.imaging_funcs import *
 
 create_var()
 create_par()

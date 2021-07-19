@@ -17,7 +17,9 @@ class World():
         self.world = {}
         self.p_world = {}
         self.prob = float
-        self.most_similar=[]
+        self.draft_most_similar = []
+        self.most_similar = []
+        self.prob_ant = float
 
     def build_world(self, i):
         """Populate a single world with value (see create_worlds)"""
@@ -31,3 +33,5 @@ class World():
             prob = prob*k
         self.prob = round(prob, 5)
         return self.prob
+
+    
