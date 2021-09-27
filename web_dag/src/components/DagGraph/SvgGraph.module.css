@@ -1,0 +1,18 @@
+.box {
+  width: 95%;
+  height: auto;
+  justify-content: center;
+  text-align: center;
+  margin: 0.1rem auto;
+  background-color: white;
+  padding: 0.35rem 0.35rem;
+  display: inline-block;
+}
+
+.button {
+  font-size: 1rem;
+  padding: 1rem;
+}
+.button:hover {
+  background: #8fbcbb;
+}

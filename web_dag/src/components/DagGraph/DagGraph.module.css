@@ -1,0 +1,32 @@
+.DagGraph {
+  width: 95%;
+  height: auto;
+  border-radius: 15px;
+  justify-content: center;
+  text-align: center;
+  display: block;
+  flex-direction: column;
+  margin: 0.1rem auto;
+  background-color: white;
+  padding: 0.35rem 0.35rem;
+}
+
+svgStyle {
+  border: '2px solid gold';
+}
+
+.h2 {
+  color: #3b4252;
+}
+
+.clearBut:hover,
+.clearBut:active {
+  background: #bf616a;
+  border-color: #bf616a;
+}
+
+.graphBut:hover,
+.graphBut:active {
+  background: #8fbcbb;
+  border-color: #8fbcbb;
+}
