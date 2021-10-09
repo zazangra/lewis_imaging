@@ -1,17 +1,15 @@
 .DagList {
-  width: 95%;
+  width: 75%;
   height: auto;
-  border-radius: 15px;
   justify-content: center;
   text-align: center;
   display: block;
   flex-direction: column;
-  margin: 0.1rem auto;
-  background-color: white;
+  margin: 1.5rem auto;
   padding: 0.35rem 0.35rem;
 }
 
-.h2 {
+.h3 {
   color: #3b4252;
 }
 

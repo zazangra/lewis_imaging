@@ -1,11 +1,17 @@
 import React from 'react';
+import Card from '@mui/material/Card';
+import Typography from '@mui/material/Typography';
 import classes from './DagList.module.css';
 
 const DagList = (props) => {
   return (
-    <div className={classes.DagList}>
-      <h2>Your DAG Items</h2>
-      <p>Click an item to delete it</p>
+    <Card className={classes.DagList}>
+      <Typography variant="h3" gutterBottom className={classes.h3}>
+        Your Dag Items
+      </Typography>
+      <Typography variant="p" gutterBottom>
+        Click an item to delete it
+      </Typography>
       <ul className={classes.ul}>
         {' '}
         {props.item.map((node) => (
@@ -22,7 +28,7 @@ const DagList = (props) => {
           </li>
         ))}
       </ul>
-    </div>
+    </Card>
   );
 };
 

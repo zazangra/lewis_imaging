@@ -1,6 +1,12 @@
 import React, { useState, useRef } from 'react';
 import classes from './dagForm.module.css';
-import Button from '../UI/Button';
+import Button from '@mui/material/Button';
+import AddIcon from '@mui/icons-material/Add';
+import Stack from '@mui/material/Stack';
+import ClearAllIcon from '@mui/icons-material/ClearAll';
+import TextField from '@mui/material/TextField';
+import Card from '@mui/material/Card';
+import Typography from '@mui/material/Typography';
 import ModalError from '../UI/ModalError';
 
 const DagForm = (props) => {
@@ -53,35 +59,63 @@ const DagForm = (props) => {
           onConfirm={errorHandler}
         />
       )}
-      <div className={classes.DagForm}>
-        <h2 className={classes.h2}>Dag Creation </h2>
-        <p>Here you can add your variables you lazy dagger</p>
+      <Card className={classes.DagForm}>
+        <Typography variant="h3" gutterBottom className={classes.h2}>
+          Dag Creation
+        </Typography>
+        <Typography variant="p">
+          Here you can add your variables you lazy dagger
+        </Typography>
         <form onSubmit={nodeHandler}>
-          <div className={classes.inputDiv}>
-            <input
-              className={classes.input}
+          <Stack
+            direction="row"
+            spacing={2}
+            justifyContent="center"
+            alignItems="center"
+            className={classes.inputDiv}
+          >
+            <TextField
+              label="Cause"
               type="text"
               id="cause"
-              ref={causeRef}
-            />{' '}
-            <em>causes</em>{' '}
-            <input
-              className={classes.input}
+              variant="outlined"
+              inputRef={causeRef}
+              size="string"
+            />
+            <TextField
+              label="Effect"
               type="text"
               id="effect"
-              ref={effRef}
+              variant="outlined"
+              inputRef={effRef}
+              size="string"
             />
-          </div>
-          <div className={classes.inputBut}>
-            <Button type="submit" className={classes.AddBut}>
+          </Stack>
+          <Stack
+            direction="row"
+            spacing={2}
+            justifyContent="center"
+            alignItems="center"
+          >
+            <Button
+              variant="contained"
+              type="submit"
+              className={classes.AddBut}
+              startIcon={<AddIcon />}
+            >
               Add
-            </Button>{' '}
-            <Button onClick={emptyList} className={classes.DelBut}>
-              X
             </Button>
-          </div>
+            <Button
+              variant="contained"
+              onClick={emptyList}
+              className={classes.DelBut}
+              startIcon={<ClearAllIcon />}
+            >
+              Clear All
+            </Button>
+          </Stack>
         </form>
-      </div>
+      </Card>
     </div>
   );
 };

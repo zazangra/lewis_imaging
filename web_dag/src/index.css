@@ -2,8 +2,8 @@
   box-sizing: border-box;
 }
 html {
-  font-family: sans-serif;
-  background-color: #d8dee9;
+  font-family: sans-serif, 'Roboto';
+  background: #f2f4f8;
   color: #434c5e;
 }
 

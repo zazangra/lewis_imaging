@@ -1,10 +1,11 @@
-import React, { useState, useEffect, useMemo } from 'react';
-import './App.css';
-import ELK from 'elkjs/lib/elk.bundled.js';
+import React, { useState } from 'react';
+import classes from './App.css';
 import DagForm from './components/dagForm/dagForm';
 import DagList from './components/DagList/DagList';
 import ModalError from './components/UI/ModalError';
 import DagGraph from './components/DagGraph/DagGraph';
+import Card from '@mui/material/Card';
+import Typography from '@mui/material/Typography';
 
 function App() {
   const [nodeList, setNodeList] = useState([]);
@@ -45,54 +46,6 @@ function App() {
     setNodeList([]);
   };
 
-  let graph;
-  graph = useMemo(() => {
-    const graphEdges = nodeList.map((node) => ({
-      id: node.key,
-      sources: [node.cause],
-      targets: [node.effect],
-    }));
-
-    const causeArray = nodeList.map((node) => node.cause);
-    const effectArray = nodeList.map((node) => node.effect);
-    const unfilteredArray = causeArray.concat(effectArray);
-    const nodesArray = [...new Set(unfilteredArray)];
-    return {
-      id: 'root',
-      layoutOptions: {
-        //      'elk.algorithm': 'mrtree',
-        'elk.algorithm': 'layered',
-        //      'elk.spacing.nodeNode': '20',
-      },
-      children: nodesArray.map((i) => ({ id: i, width: 6, height: 6 })),
-      edges: graphEdges,
-      edgesPoints: [],
-    };
-  }, [nodeList]);
-
-  // draw coordinates for our nodes (after elk's calculations)
-  const getMultiLinkData = (grafo) => {
-    const multiLinkData = grafo.edges.map((edge) => ({
-      source: [...edge.sources],
-      target: [...edge.targets],
-    }));
-    // get x and y from props.graph.children and put it in multiLinkData
-    multiLinkData.forEach((elem) => {
-      const SourceEl = grafo.children.find((x) => x.id === elem.source[0]);
-      const TargetEl = grafo.children.find((x) => x.id === elem.target[0]);
-      elem.source = [SourceEl.x + 3, SourceEl.y];
-      elem.target = [TargetEl.x - 3, TargetEl.y];
-    });
-    grafo.edgesPoints = multiLinkData;
-    console.log('ho fatto multiLinkData in memo');
-  };
-
-  useEffect(() => {
-    const elk = new ELK();
-    elk.layout(graph).then(getMultiLinkData);
-    console.log('ho fatto elk e multiLinkData');
-  }, [nodeList, graph]);
-
   return (
     <div>
       {error && (
@@ -103,17 +56,23 @@ function App() {
         />
       )}
       <div>
-        <div className="dag-intro">
-          <header className="dag-header">
-            <h1> DAG CREATOR</h1>
-          </header>
-          <h2>Direct Acyclic Graphs</h2>
-          <p> Some sort of DAG introduction may be put here (max 2 par) </p>
-        </div>
+        <Card className="dag-intro">
+          <Typography
+            variant="h2"
+            className={classes.h2}
+            component="div"
+            gutterBottom
+          >
+            Causal Dag Creator
+          </Typography>
+          <Typography variant="p" gutterBottom>
+            Some sort of intro may be put here
+          </Typography>
+        </Card>
         <DagForm addNode={takeNode} clearList={clearList} />
         <DagList item={nodeList} removeItem={delNode} />
         <DagGraph
-          item={graph}
+          item={nodeList}
           isGraphClicked={isGraphClicked}
           changeIsGraphClicked={changeIsGraphClicked}
         />
@@ -123,5 +82,3 @@ function App() {
 }
 
 export default App;
-
-//tikzItem={graph}

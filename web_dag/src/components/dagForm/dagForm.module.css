@@ -1,33 +1,18 @@
 .DagForm {
-  width: 95%;
+  width: 75%;
   height: auto;
-  border-radius: 15px;
   justify-content: center;
   text-align: center;
   display: block;
   flex-direction: column;
   margin: 0.1rem auto;
-  background-color: white;
-  padding: 0.35rem 0.35rem;
+  padding: 1.35rem 0.35rem;
 }
 
 .h2 {
   color: #3b4252;
 }
 
-.input {
-  flex: 3;
-  font: inherit;
-  padding: 0.35rem 0.35rem;
-  border-radius: 6px;
-  border: 1px solid #4c566a;
-}
-
-.input:focus {
-  outline: none;
-  border-color: #4c566a;
-  background: #e5e9f0;
-}
 .inputDiv {
   padding: 0.5rem;
 }

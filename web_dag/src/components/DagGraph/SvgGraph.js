@@ -1,16 +1,17 @@
-import React, { useState, useEffect, useRef } from 'react';
-import Button from '../UI/Button';
+import React, { useRef, useEffect } from 'react';
+import Button from '@mui/material/Button';
+import DownloadIcon from '@mui/icons-material/Download';
 import classes from './SvgGraph.module.css';
 import * as d3 from 'd3';
 import downloadSvg from 'svg-crowbar';
 
 const SvgGraph = (props) => {
   const ref = useRef();
-  const [clickDownload, setClickDownload] = useState(false);
 
   const handleCD = () => {
-    setClickDownload(true);
+    downloadSvg(ref.current);
   };
+
   useEffect(() => {
     const link = d3.linkHorizontal();
     const svgElement = d3.select(ref.current);
@@ -23,20 +24,16 @@ const SvgGraph = (props) => {
       .attr('stroke-width', '0.1px')
       .attr('fill', 'none')
       .attr('marker-end', 'url(#arrowhead)');
-    if (clickDownload && props.isClicked) {
-      downloadSvg(ref.current);
-      setClickDownload(false);
-    }
-  }, [props.isClicked, props.graph.edgesPoints, clickDownload]);
+  }, [props.isClicked, props.graph.edgesPoints]);
 
   return (
     <div className={classes.box}>
       <svg
-        border="1px solid black"
+        style={{ border: '0.5px solid black' }}
         xmlns="http://www.w3.org/2000/svg"
         width="95%"
-        height="55%"
-        viewBox="0 0 150 100"
+        height="90%"
+        viewBox="-20 0 150 80"
         ref={ref}
       >
         <defs>
@@ -83,9 +80,16 @@ const SvgGraph = (props) => {
           </text>
         ))}
       </svg>
-      <Button onClick={handleCD} className={classes.button}>
-        Download
-      </Button>
+      <div>
+        <Button
+          onClick={handleCD}
+          variant="contained"
+          startIcon={<DownloadIcon />}
+          className={classes.button}
+        >
+          Download
+        </Button>
+      </div>
     </div>
   );
 };
