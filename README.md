@@ -1,3 +1,6 @@
+#Lewis Imaging on a Causal Model
+
+
 This is a Python script to perform Lewis Imaging as presented in the following article:
 Pearl, Judea (2017), "Physical and Metaphysical Counterfactuals: Evaluating Disjunctive Actions", Journal of Causal Inference, 5 (2):1--10 ()
 
