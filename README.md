@@ -20,6 +20,6 @@ After having specified 1, 2 and 3, the script computes the probability of a give
 i.e. the probability that B occurs under the assumption that A happened.
 
 For example, given a set of three variables X, Y and Z, given the conditional dependencies among those, and
-given a relation of similararity among all the possible configurations of X; Y and Z, the script can compute
+given a relation of similararity among all the possible configurations of X, Y and Z, the script can compute
 the probability of X=1 -> Z=1, i.e. the probability that Z takes value 1 under the assumption that X assumed value 1.
 
