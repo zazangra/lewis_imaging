@@ -1,4 +1,4 @@
-#Lewis Imaging on a Causal Model
+# Lewis Imaging on a Causal Model
 
 
 This is a Python script to perform Lewis Imaging as presented in the following article:
